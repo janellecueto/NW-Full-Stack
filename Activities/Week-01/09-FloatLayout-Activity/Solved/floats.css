@@ -18,7 +18,12 @@ header {
 }
 
 section {
-
+  display: block;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+#left, #middle, #right{
+  width: 33%;float: left;
 }
 
 #left {
@@ -33,14 +38,26 @@ section {
   background: #666;
 }
 
+.clearfix::after{
+  content: " ";
+  display: block;
+  clear: both;
+}
+
 #full {
+  background: #eee;
+  margin-top: 20px;
 }
 
 #division {
+  background: #6ea3da;
 }
 
 aside {
-  background: #6ae3da;
+  background: #fff;
+  width: 20%; 
+  float: left;
+  height: 150px;
 }
 
 footer {
