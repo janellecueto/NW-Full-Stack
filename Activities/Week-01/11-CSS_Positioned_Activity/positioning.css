@@ -1,0 +1,14 @@
+.container{
+    display: block; 
+    width: 80%;
+    margin: auto;
+}
+.box{
+    display: block;
+    width: 150px; 
+    height: 100px; 
+    text-align: center;
+}
+.relative{width: 100%;}
+.relative, .fixed{background: #ccc;}
+.absolute{background: #888;}
