@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Word Guess Game</title>
     <style>
-        
+        #game-container{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -16,19 +18,20 @@
         <h1>Word Guess Game</h1>
         <p id="welcomeMessage">Press Any Key to Get Started!</p>
 
-        <div id="game-container">
+        <div id="game-container text-center">
             <p id="mystery-word"></p>
+            <div class="row" id="stats">
+                <div class="col">
+                    <p>Strikes: <span id="strikes"></span></p>
+                </div>
+                <div class="col">
+                    <p>Wrong Guesses: <span id="mistakes"></span></p>
+                </div>
+            </div>
+
         </div>
     </div>
 
-
-<script>
-    var words = ["banana", "apple", "orange", "strawberry", "watermelon", "kiwi", "pineapple", "grape"];
-    var mysteryWord = words[Math.floor(Math.random() * words.length)];
-
-    var mistakes = [];
-
-</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 crossorigin="anonymous"></script>
@@ -36,6 +39,70 @@ crossorigin="anonymous"></script>
 crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 crossorigin="anonymous"></script>
+
+<script>
+        var words = ["BANANA", "APPLE", "ORANGE", "STRAWBERRY", "WATERMELON", "KIWI", "PINEAPPLE", "GRAPE"];
+        var mysteryWord = words[Math.floor(Math.random() * words.length)];
+        mysteryWordLen = mysteryWord.length;
+        console.log(mysteryWord+" | length:"+mysteryWordLen);
+    
+        var mistakes = [];
+        var corrects = [];
+
+        var strikes = 0;
+        var guessWord = new Array(mysteryWordLen);
+        guessWord.fill("_");
+    
+        //init stats
+        $('#strikes').text(strikes);
+        $('#mistakes').text(mistakes.join(" "));
+        $('#mystery-word').text(guessWord.join(" "));
+    
+        function gameLoop(guess){
+            if(!mistakes.includes(guess) && !corrects.includes(guess)){
+                //we can assess whether the guess is correct or a mistake
+                mysteryWord.includes(guess) ? fillGuessWord(guess) : makeMistake(guess);
+                if(!guessWord.includes("_")){
+                    //win!
+                }
+                if(strikes > 6){
+                    //lose!
+                }
+            }
+        }
+
+        function fillGuessWord(guess){
+            for(var i = 0; i < mysteryWordLen; i++){
+                if(mysteryWord[i] === guess){
+                    guessWord[i] = guess;
+                }
+            }
+            $('#mystery-word').text(guessWord.join(" "));
+            corrects.push(guess);
+        }
+
+        function makeMistake(guess){
+            strikes++;
+            mistakes.push(guess);
+
+            $('#strikes').text(strikes);
+            $('#mistakes').text(mistakes.join(" "));
+        }
+
+        document.onkeyup = function(event){
+            if($('#game-container').is(':hidden')){
+                $('#game-container').show();
+                $('#welcomeMessage').hide();
+            }
+            else{
+                var guess = String.fromCharCode(event.keyCode);
+                console.log(guess);
+                gameLoop(guess);
+            }
+        }
+    
+    
+    </script>
 </body>
 </body>
 </html>
