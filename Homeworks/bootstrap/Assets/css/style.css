@@ -60,4 +60,6 @@ body {
     color: white;
     position: absolute;
     bottom: 5px;
+    text-align: center;
+    line-height: 40px;
 }

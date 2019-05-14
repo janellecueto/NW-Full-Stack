@@ -9,16 +9,23 @@
     <title>Word Guess Game</title>
     <style>
         #game-container{
-            display: none;
+            /* display: none; */
+            margin: 50px;
+        }
+        #mystery-word{
+            font-size: 38px;
+        }
+        h1{
+            margin: 40px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container text-center">
         <h1>Word Guess Game</h1>
         <p id="welcomeMessage">Press Any Key to Get Started!</p>
 
-        <div id="game-container text-center">
+        <div id="game-container" class="text-center">
             <p id="mystery-word"></p>
             <div class="row" id="stats">
                 <div class="col">
@@ -30,6 +37,43 @@
             </div>
 
         </div>
+
+        <div class="modal" id="winScreen" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Congratulations!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>You won!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.reload();">Replay</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal" id="loseScreen" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">BOOOOOOoooo!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>You lose :(</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="window.location.reload();">Replay</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
     </div>
 
 
@@ -59,14 +103,14 @@ crossorigin="anonymous"></script>
         $('#mystery-word').text(guessWord.join(" "));
     
         function gameLoop(guess){
-            if(!mistakes.includes(guess) && !corrects.includes(guess)){
+            if(!mistakes.includes(guess) && !corrects.includes(guess) && guess.match(/[A-Z]/i)){
                 //we can assess whether the guess is correct or a mistake
                 mysteryWord.includes(guess) ? fillGuessWord(guess) : makeMistake(guess);
                 if(!guessWord.includes("_")){
-                    //win!
+                    $('#winScreen').show();
                 }
                 if(strikes > 6){
-                    //lose!
+                    $('#loseScreen').show();
                 }
             }
         }
