@@ -144,7 +144,17 @@ crossorigin="anonymous"></script>
                 gameLoop(guess);
             }
         }
+
+
+        for(i=0; i< computerPickWord.length; i++){
+            if(userInput == computerPickWord[i]){
+                boardGame[i] = userInput;
+                
+            }
+        }
     
+
+
     
     </script>
 </body>
