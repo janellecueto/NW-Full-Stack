@@ -17,16 +17,19 @@
 
         for(var i = 1; i <= 100; i++){
             var li = $("<li>");
+            var str = "";
             if(i%3 == 0){
-                li.text("Fizz");
+                str += "Fizz";
             }
-            else if(i%5 == 0){
-                li.text("Buzz");
+            if(i%5 == 0){
+                str += "Buzz";
             }
-            else li.text(i);
-            $("#myList").append(li);
+            if(i%5 != 0 && i%3 != 0){
+                str+= i;
+            }
+            li.text(str).appendTo("#myList");
         }
-        
+
     </script>
 </body>
 </html>
