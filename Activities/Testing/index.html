@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        function doTheTHing(){
+            var xhttp = new XMLHttpRequest();
+
+            xhttp.onreadystatechange = function(){
+                if(this.status = 400 && this.readyState == 4){
+                    console.log(xhttp.response);
+                }
+            }
+            xhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/50e96906f2f88a696fc32c4b3f40607d/41.85003,20-87.65005", true);
+            
+        }
+    </script>
+</body>
+</html>
