@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     port: 3306,
     user: "janelle",
     password: "password",
-    database: "playlistDB"
+    database: "greatBay"
   });
   
 //   connection.connect(function(err) {
@@ -30,7 +30,8 @@ function promptUser(){
             postItem();
         } else if(response.choice == "BID ON AN ITEM"){
             //display items, allow user to select item
-            console.log("bid!")
+            // console.log("bid!")
+            bidItem();
         }
     })
 }
@@ -63,19 +64,32 @@ function postItem(){
         console.log(response.name);
         console.log(response.description);
         console.log(response.price);
-        connection.connect(function(err){
-            if(err) throw err;
-
-        })
+        console.log(insertItem(response.name, response.description, response.price, ""));
     });
 }
 
-function insertItem(name, description, price, user){
-    connection.query("INSERT INTO items (`name`, description, price, `user`) "+
-    "VALUES ('" + name + "', '"+description+","+price+"'"+user+"'", 
-    function(err,res){
-        
+function insertItem(name, description, price, user=""){
+    var query = "INSERT INTO items (`name`, description, price, `user`) ";
+    query += "VALUES ('" + name + "', '" + description + "'," + price + ", '"+user+"')";
+    connection.query(query, function(err,res){
+        if(err) {
+            console.log(query);
+            throw err;
+        }
     });
+    connection.end();
+}
+
+function bidItem(){
+    //display all items
+    //prompt user to pick an item
+    //prompt user for bid
+    var currItems = [];
+    connection.query("SELECT * FROM items",function(err,res){
+        console.log(res);
+    })
+    connection.end();
+    
 }
 
 promptUser();
