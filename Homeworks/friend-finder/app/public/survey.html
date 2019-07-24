@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Friend Finder</title>
     <style>
-    
+        img{max-width: 100%;}
     </style>
 </head>
 <body>
@@ -191,8 +191,13 @@
                 //if a friend is available <3
                 if(data){
                     //pop up modal with friend ;)
+                    // var jsonData = JSON.parse(data);
+                    $("#fill-name").text(data["name"]);
+                    $("#fill-img").attr("src", data["photo"]);
+                    $("#best-match").modal("show");
                 }
                 //else, this is the first one in the thing
+
             })
         })
     </script>
