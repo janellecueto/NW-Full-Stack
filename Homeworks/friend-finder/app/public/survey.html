@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Friend Finder</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h4>About You</h4>
+        <form id="friend-form">
+            <div class="form-group">
+                <label for="friend-name">Name (required):</label>
+                <input id="friend-name" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="friend-pic">Link to photo image (required):</label>
+                <input id="friend-pic" type="text" class="form-control" required>
+            </div>
+            <hr>
+            <h4>Questions</h4>
+            <div class="form-group">
+                <label for="q1">1. Your mind is always buzzing with unexplored ideas and plans.</label>
+                <select id="q1" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q2">2. Generally speaking, you rely more on your experience than your imagination.</label>
+                <select id="q2" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q3">3. You find it easy to stay relaxed and focused when there is some pressure.</label>
+                <select id="q3" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q4">4. You rarely do something out of sheer curiosity.</label>
+                <select id="q4" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q5">5. People can rarely upset you.</label>
+                <select id="q5" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q6">6. It is often difficult for you to relate to other people's feelings.</label>
+                <select id="q6" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q7">7. In discussion, truth should be more important than people's sensitivities.</label>
+                <select id="q7" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q8">8. You rarely get carried away by fantasies and ideas.</label>
+                <select id="q8" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q9">9. You think everyone's views should be respected regardless of whether they are supported by facts or not.</label>
+                <select id="q9" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="q10">10. You feel more energetic after spending time with a group of people.</label>
+                <select id="q10" class="form-control" required>
+                    <option disabled selected>Select an option</option>
+                    <option value="1">1 (Strongly disagree)</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5 (Strongly agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-block btn-primary" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" id="best-match">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Best Match</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h2 id="fill-name"></h2>
+                <img src="https://dcp.org/wp-content/uploads/2018/11/person-placeholder-e1543539209738.jpg" alt="placeholder" id="fill-img">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        $("#friend-form").submit(function(e){
+            e.preventDefault();
+            var name = $("#friend-name").val();
+            var pic = $("#friend-pic").val();
+            var scores = [];
+
+            for(var i = 1; i<=10; i++){
+                if($("#q"+i).val()){
+                    scores.push(parseInt($("#q"+i).val()));
+                } else {
+                    alert("Please fill out all fields!");
+                    return false;
+                }
+            }
+            var newFriend = {
+                name: name,
+                photo: pic,
+                scores: scores
+            }
+            console.log(newFriend);
+
+            $.post("/api/friends", newFriend, function(data){
+                //if a friend is available <3
+                if(data){
+                    //pop up modal with friend ;)
+                }
+                //else, this is the first one in the thing
+            })
+        })
+    </script>
+</body>
+</html>
