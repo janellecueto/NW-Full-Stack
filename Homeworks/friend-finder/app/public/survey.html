@@ -140,6 +140,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-block btn-primary" value="Submit">
+                <a href="/home" class="btn btn-block btn-secondary">Cancel</a>
             </div>
         </form>
     </div>
@@ -190,13 +191,12 @@
             $.post("/api/friends", newFriend, function(data){
                 //if a friend is available <3
                 if(data){
-                    //pop up modal with friend ;)
-                    // var jsonData = JSON.parse(data);
                     $("#fill-name").text(data["name"]);
                     $("#fill-img").attr("src", data["photo"]);
                     $("#best-match").modal("show");
                 }
-                //else, this is the first one in the thing
+                //else, this is the first one in the thing, we don't care
+                //clear vals but i don't feel like it
 
             })
         })
