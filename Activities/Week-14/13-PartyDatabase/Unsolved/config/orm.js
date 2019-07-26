@@ -18,11 +18,11 @@ var orm = {
             console.table(res);
         })
     },
-    selectClientsAndParties: function(){
+    selectClientsAndParties: function(callBack){
         var query = "SELECT * FROM clients INNER JOIN parties ON clients.id = parties.client_id";
         connection.query(query, function(err,res){
             if(err) throw err;
-            console.table(res);
+            callBack(res);
         })
     },
     closeConn: function(){

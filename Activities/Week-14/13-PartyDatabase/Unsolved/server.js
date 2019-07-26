@@ -4,6 +4,8 @@ orm.selectColFromTable("party_name", "parties");
 
 orm.selectAllOfType("grown_up");
 
-orm.selectClientsAndParties();
+orm.selectClientsAndParties(function(res){
+    console.log(res);
+});
 
 orm.closeConn();
