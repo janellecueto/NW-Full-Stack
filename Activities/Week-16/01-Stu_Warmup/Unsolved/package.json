@@ -1,0 +1,20 @@
+{
+  "name": "Unsolved",
+  "version": "1.0.0",
+  "main": "tax.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
