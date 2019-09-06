@@ -1,27 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function NavTabs(props) {
+function NavTabs() {
   return (
     <ul className="nav nav-tabs">
       <li className="nav-item">
-        <a href="#home" onClick={() => props.handlePageChange("Home")} className="nav-link">
+        <Link to="/" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
           Home
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="#about" onClick={() => props.handlePageChange("About")} className="nav-link">
+        <Link
+          to="/about"
+          className={window.location.pathname === "/about" ? "nav-link active" : "nav-link"}
+        >
           About
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="#blog" onClick={() => props.handlePageChange("Blog")} className="nav-link">
+        <Link
+          to="/blog"
+          className={window.location.pathname === "/blog" ? "nav-link active" : "nav-link"}
+        >
           Blog
-        </a>
+        </Link>
       </li>
       <li className="nav-item">
-        <a href="#contact" onClick={() => props.handlePageChange("Contact")} className="nav-link">
+        <Link
+          to="/contact"
+          className={window.location.pathname === "/contact" ? "nav-link active" : "nav-link"}
+        >
           Contact
-        </a>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/contact/learn"
+          className={window.location.pathname === "/contact/learn" ? "nav-link active" : "nav-link"}
+        >
+          Learn
+        </Link>
       </li>
     </ul>
   );
